@@ -1,0 +1,58 @@
+server:
+  port: 10000
+#  error:
+#    whitelabel:
+#      enabled: false
+#    include-stacktrace: never
+
+spring:
+  application:
+    name: management
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/teacher_management?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: "6dYHDJ_Fd4587+jiE3dk#dh45ie"
+
+  jpa:
+    database: MySQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+
+    #  jackson:
+    # 参数意义：
+    #JsonInclude.Include.ALWAYS        默认
+    #JsonInclude.Include.NON_DEFAULT   属性为默认值不序列化
+    #JsonInclude.Include.NON_EMPTY     属性为 空（””） 或者为 NULL 都不序列化
+    #JsonInclude.Include.NON_NULL      属性为NULL  不序列化
+#    default-property-inclusion: ALWAYS
+#    time-zone: GMT+8
+#    date-format: yyyy-MM-dd HH:mm:ss
+
+  freemarker:
+    allow-session-override: false
+    cache: true
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    settings:
+      template_update_delay: 0
+    # 设定后缀名
+    suffix: .ftl
+    # 设定ftl文件路径
+    template-loader-path: classpath:/templates
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,E:/project/image/01/
+
+file:
+  # 文件上传目录（注意Linux和Windows上的目录结构不同）
+  uploadPath: E:/project/image/01/
